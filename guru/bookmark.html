@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/bookmark.css">
+  <title>Bookmark - El-pro</title>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <div class="sidebar-icons">
+      <ul>
+        <li>
+          <a href="index.html">
+            <img src="/assets/image/web icons/home2.svg" class="home-icon" alt="Home">
+          </a>
+        </li>
+        <li>
+          <a href="/guru/kelas.html">
+            <img src="/assets/image/web icons/homeProfile.svg" class="homeProfile-icon" alt="Kelas">
+          </a>
+        </li>
+        <li>
+          <a href="/guru/bookmark.html" class="active">
+            <img src="/assets/image/web icons/bookmark.svg" class="bookmark-icon" alt="Bookmark">
+          </a>
+        </li>
+        <li>
+          <a href="/guru/manajemen-tantangan.html">
+            <img src="/assets/image/web icons/course.svg" class="course-icon" alt="Manajemen Tantangan">
+          </a>
+        </li>
+        <li>
+          <a href="/guru/absensi.html">
+            <img src="/assets/image/web icons/book.svg" class="absen-icon" alt="Absen">
+          </a>
+        </li>
+        <li>
+          <a href="/guru/profile.html">
+            <img src="/assets/image/web icons/profile.svg" class="user-profile" alt="Profile">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <main class="container" style="margin-left: 70px; width: calc(100% - 120px);">
+    <section class="page-header">
+      <div class="page-title">
+        <h3>Bookmark</h3>
+        <p>Simpan kelas favoritmu dalam satu tempat</p>
+      </div>
+      <div class="page-meta">
+        <span id="bookmark-count">0 kelas disimpan</span>
+      </div>
+    </section>
+
+    <section id="bookmarked-kelas" class="cards-grid">
+      <!-- Bookmarked classes will be loaded here -->
+    </section>
+
+    <section id="no-bookmarks" class="empty-state" style="display: none;">
+      <div class="empty-state-card">
+        <div class="empty-icon">📌</div>
+        <h4>Belum ada kelas yang di-bookmark</h4>
+        <p>Bookmark kelas yang ingin kamu pelajari nanti agar mudah ditemukan di sini.</p>
+        <a href="/guru/kelas.html" class="btn btn-primary">Lihat Kelas</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/bookmark.js"></script>
+</body>
+
+</html>

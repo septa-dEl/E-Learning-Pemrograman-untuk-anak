@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/absen.css">
+    <title>Absensi - El-pro</title>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-icons">
+            <ul>
+                <li><a href="/index.html"><img src="/assets/image/web icons/home2.svg" class="home-icon"></a></li>
+                <li><a href="/murid/kelas.html"><img src="/assets/image/web icons/homeProfile.svg" class="homeProfile-icon"></a></li>
+                <li><a href="/murid/bookmark.html"><img src="/assets/image/web icons/course.svg" class="course-icon"></a></li>
+                <li><a href="/murid/quiz.html"><img src="/assets/image/web icons/bookmark.svg" class="bookmark-icon"></a></li>
+                <li><a href="/murid/absen.html" class="active"><img src="/assets/image/web icons/book.svg" class="absen-icon"></a></li>
+                <li><a href="/murid/profile.html"><img src="/assets/image/web icons/profile.svg" class="user-profile"></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="absen-wrapper">
+            <div class="page-title">
+                <h3>Absensi Belajar</h3>
+            </div>
+
+            <div class="absen-card">
+                <h2>Form Kehadiran Harian</h2>
+                
+                <div id="absenAlert" class="alert"></div>
+
+                <form id="absenForm" onsubmit="handleSubmitAbsen(event)">
+                    <div class="form-group">
+                        <label for="studentName">Nama Lengkap</label>
+                        <input type="text" id="studentName" class="form-control" placeholder="Nama Anda" required readonly>
+                    </div>
+
+
+
+                    <label>Status Kehadiran</label>
+                    <div class="status-grid">
+                        <div class="status-option">
+                            <input type="radio" name="status" value="Hadir" id="sHadir" checked>
+                            <label for="sHadir" class="status-label">HADIR</label>
+                        </div>
+                        <div class="status-option">
+                            <input type="radio" name="status" value="Izin" id="sIzin">
+                            <label for="sIzin" class="status-label">IZIN</label>
+                        </div>
+                        <div class="status-option">
+                            <input type="radio" name="status" value="Sakit" id="sSakit">
+                            <label for="sSakit" class="status-label">SAKIT</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="notesGroup" style="display: none;">
+                        <label for="notes">Alasan Izin / Sakit</label>
+                        <textarea id="notes" class="form-control" rows="3" placeholder="Masukkan alasan jika izin atau sakit..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-brutal" id="btnSubmit">Kirim Absensi 🚀</button>
+                </form>
+            </div>
+            
+            <p style="text-align: center; color: #666; font-size: 0.9rem; font-weight: 600;">
+                Catatan: Absensi hanya dapat diisi satu kali per hari.
+            </p>
+        </div>
+    </main>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/absen.js"></script>
+</body>
+</html>

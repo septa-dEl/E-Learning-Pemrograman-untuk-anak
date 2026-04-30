@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/kelasHTML.css">
+    <title>Kelas Python - El-pro</title>
+    <style>
+      .materi-section { background: #fff; border-radius: 14px; padding: 28px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e5e7eb; }
+      .materi-section h4 { color: #0d9488; font-weight: 800; margin-bottom: 12px; font-size: 1.25rem; }
+      .materi-section p, .materi-section li { font-size: 0.95rem; line-height: 1.7; color: #333; }
+      .code-box { background: #1e293b; color: #e2e8f0; border-radius: 10px; padding: 16px 20px; font-family: 'Courier New', monospace; font-size: 0.88rem; margin: 12px 0 16px; overflow-x: auto; line-height: 1.6; border: 2px solid #334155; white-space: pre; }
+      .code-box .kw { color: #c084fc; } .code-box .fn { color: #60a5fa; } .code-box .str { color: #34d399; } .code-box .num { color: #f472b6; } .code-box .cmt { color: #64748b; }
+      .tip-box { background: #ccfbf1; border-left: 4px solid #0d9488; padding: 14px 18px; border-radius: 0 10px 10px 0; margin: 12px 0; font-size: 0.9rem; color: #134e4a; }
+      .materi-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+      .materi-nav a { padding: 6px 14px; background: #ccfbf1; color: #0d9488; border-radius: 8px; text-decoration: none; font-size: 0.82rem; font-weight: 600; transition: all 0.2s; }
+      .materi-nav a:hover { background: #0d9488; color: #fff; }
+    </style>
+</head>
+<body>
+<div class="sidebar"><div class="sidebar-icons"><ul>
+  <li><a href="/index.html"><img src="/assets/image/web icons/home2.svg" class="home-icon"></a></li>
+  <li><a href="/murid/kelas.html"><img src="/assets/image/web icons/homeProfile.svg" class="homeProfile-icon"></a></li>
+  <li><a href="/murid/bookmark.html"><img src="/assets/image/web icons/course.svg" class="course-icon"></a></li>
+  <li><a href="/murid/quiz.html"><img src="/assets/image/web icons/bookmark.svg" class="bookmark-icon"></a></li>
+  <li><a href="/murid/profile.html"><img src="/assets/image/web icons/profile.svg" class="user-profile"></a></li>
+</ul></div></div>
+
+<div class="container">
+    <div class="kelas-title">
+        <h3>Kelas Python untuk Pemula</h3>
+        <p>Python adalah bahasa pemrograman paling populer dan mudah dipelajari! Cocok banget untuk pemula.</p>
+    </div>
+    <div class="materi-nav">
+      <a href="#bab1">1. Apa itu Python?</a><a href="#bab2">2. Variabel</a><a href="#bab3">3. Input & Output</a><a href="#bab4">4. Tipe Data</a><a href="#bab5">5. Kondisi</a><a href="#bab6">6. Perulangan</a><a href="#bab7">7. Fungsi</a><a href="#bab8">8. List & Dictionary</a>
+    </div>
+
+    <div class="materi-section" id="bab1">
+        <h4>Bab 1 — Apa itu Python?</h4>
+        <p><strong>Python</strong> adalah bahasa pemrograman yang sangat mudah dibaca, seperti menulis dalam bahasa Inggris biasa. Python digunakan untuk membuat game, aplikasi AI, website, analisis data, dan masih banyak lagi!</p>
+        <div class="code-box"><span class="cmt"># Program Python pertamamu!</span>
+<span class="fn">print</span>(<span class="str">"Halo, Dunia!"</span>)
+<span class="fn">print</span>(<span class="str">"Aku sedang belajar Python!"</span>)</div>
+        <div class="tip-box"><strong>Tahukah kamu?</strong> Python dinamakan dari acara komedi Monty Python, bukan dari ular!</div>
+    </div>
+
+    <div class="materi-section" id="bab2">
+        <h4>Bab 2 — Variabel</h4>
+        <p>Di Python, membuat variabel sangat mudah — cukup tulis nama dan isinya:</p>
+        <div class="code-box"><span class="cmt"># Membuat variabel</span>
+nama = <span class="str">"Budi"</span>
+umur = <span class="num">10</span>
+tinggi = <span class="num">140.5</span>
+suka_coding = <span class="kw">True</span>
+
+<span class="cmt"># Menampilkan variabel</span>
+<span class="fn">print</span>(nama)        <span class="cmt"># Budi</span>
+<span class="fn">print</span>(umur)        <span class="cmt"># 10</span>
+<span class="fn">print</span>(<span class="str">f"Nama: </span>{nama}<span class="str">, Umur: </span>{umur}<span class="str">"</span>)</div>
+        <div class="tip-box"><strong>Keren!</strong> Di Python kamu tidak perlu menulis tipe data — Python akan menebaknya secara otomatis!</div>
+    </div>
+
+    <div class="materi-section" id="bab3">
+        <h4>Bab 3 — Input dan Output</h4>
+        <div class="code-box"><span class="cmt"># Meminta input dari pengguna</span>
+nama = <span class="fn">input</span>(<span class="str">"Siapa namamu? "</span>)
+<span class="fn">print</span>(<span class="str">"Halo, "</span> + nama + <span class="str">"!"</span>)
+
+<span class="cmt"># Input angka</span>
+umur = <span class="fn">int</span>(<span class="fn">input</span>(<span class="str">"Berapa umurmu? "</span>))
+<span class="fn">print</span>(<span class="str">f"Kamu berumur </span>{umur}<span class="str"> tahun"</span>)
+
+<span class="cmt"># Kalkulator sederhana</span>
+a = <span class="fn">int</span>(<span class="fn">input</span>(<span class="str">"Angka pertama: "</span>))
+b = <span class="fn">int</span>(<span class="fn">input</span>(<span class="str">"Angka kedua: "</span>))
+<span class="fn">print</span>(<span class="str">f"Hasil penjumlahan: </span>{a + b}<span class="str">"</span>)</div>
+    </div>
+
+    <div class="materi-section" id="bab4">
+        <h4>Bab 4 — Tipe Data</h4>
+        <div class="code-box"><span class="cmt"># String (teks)</span>
+nama = <span class="str">"Ani"</span>
+
+<span class="cmt"># Integer (bilangan bulat)</span>
+umur = <span class="num">12</span>
+
+<span class="cmt"># Float (bilangan desimal)</span>
+tinggi = <span class="num">145.5</span>
+
+<span class="cmt"># Boolean (benar/salah)</span>
+sudah_makan = <span class="kw">True</span>
+
+<span class="cmt"># List (daftar)</span>
+buah = [<span class="str">"apel"</span>, <span class="str">"jeruk"</span>, <span class="str">"mangga"</span>]
+
+<span class="cmt"># Dictionary (kamus data)</span>
+siswa = {
+    <span class="str">"nama"</span>: <span class="str">"Budi"</span>,
+    <span class="str">"umur"</span>: <span class="num">10</span>,
+    <span class="str">"kelas"</span>: <span class="str">"4 SD"</span>
+}
+
+<span class="cmt"># Cek tipe data</span>
+<span class="fn">print</span>(<span class="fn">type</span>(nama))   <span class="cmt"># &lt;class 'str'&gt;</span>
+<span class="fn">print</span>(<span class="fn">type</span>(umur))   <span class="cmt"># &lt;class 'int'&gt;</span></div>
+    </div>
+
+    <div class="materi-section" id="bab5">
+        <h4>Bab 5 — Kondisi (IF-ELIF-ELSE)</h4>
+        <div class="code-box">nilai = <span class="num">85</span>
+
+<span class="kw">if</span> nilai >= <span class="num">80</span>:
+    <span class="fn">print</span>(<span class="str">"Nilai A - Luar biasa!"</span>)
+<span class="kw">elif</span> nilai >= <span class="num">60</span>:
+    <span class="fn">print</span>(<span class="str">"Nilai B - Bagus!"</span>)
+<span class="kw">else</span>:
+    <span class="fn">print</span>(<span class="str">"Perlu belajar lagi"</span>)
+
+<span class="cmt"># Perhatikan: Python pakai INDENTASI (spasi)</span>
+<span class="cmt"># untuk menandai blok kode, bukan kurung { }</span></div>
+        <div class="tip-box"><strong>Penting!</strong> Di Python, indentasi (spasi di awal baris) itu WAJIB. Biasanya pakai 4 spasi.</div>
+    </div>
+
+    <div class="materi-section" id="bab6">
+        <h4>Bab 6 — Perulangan</h4>
+        <div class="code-box"><span class="cmt"># FOR — pengulangan dengan rentang</span>
+<span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span>(<span class="num">1</span>, <span class="num">6</span>):
+    <span class="fn">print</span>(<span class="str">f"Hitungan ke-</span>{i}<span class="str">"</span>)
+<span class="cmt"># Output: ke-1, ke-2, ke-3, ke-4, ke-5</span>
+
+<span class="cmt"># FOR — perulangan list</span>
+hewan = [<span class="str">"kucing"</span>, <span class="str">"anjing"</span>, <span class="str">"kelinci"</span>]
+<span class="kw">for</span> h <span class="kw">in</span> hewan:
+    <span class="fn">print</span>(<span class="str">f"Hewan: </span>{h}<span class="str">"</span>)
+
+<span class="cmt"># WHILE</span>
+angka = <span class="num">1</span>
+<span class="kw">while</span> angka &lt;= <span class="num">3</span>:
+    <span class="fn">print</span>(angka)
+    angka += <span class="num">1</span></div>
+    </div>
+
+    <div class="materi-section" id="bab7">
+        <h4>Bab 7 — Fungsi</h4>
+        <div class="code-box"><span class="cmt"># Membuat fungsi</span>
+<span class="kw">def</span> <span class="fn">sapa</span>(nama):
+    <span class="fn">print</span>(<span class="str">f"Halo, </span>{nama}<span class="str">!"</span>)
+
+<span class="fn">sapa</span>(<span class="str">"Budi"</span>)   <span class="cmt"># Halo, Budi!</span>
+<span class="fn">sapa</span>(<span class="str">"Ani"</span>)    <span class="cmt"># Halo, Ani!</span>
+
+<span class="cmt"># Fungsi dengan return</span>
+<span class="kw">def</span> <span class="fn">luas_persegi</span>(sisi):
+    <span class="kw">return</span> sisi * sisi
+
+hasil = <span class="fn">luas_persegi</span>(<span class="num">5</span>)
+<span class="fn">print</span>(<span class="str">f"Luas: </span>{hasil}<span class="str">"</span>)  <span class="cmt"># Luas: 25</span></div>
+    </div>
+
+    <div class="materi-section" id="bab8">
+        <h4>Bab 8 — List dan Dictionary</h4>
+        <div class="code-box"><span class="cmt"># List (daftar)</span>
+buah = [<span class="str">"apel"</span>, <span class="str">"jeruk"</span>, <span class="str">"mangga"</span>]
+buah.<span class="fn">append</span>(<span class="str">"anggur"</span>)     <span class="cmt"># tambah data</span>
+<span class="fn">print</span>(buah[<span class="num">0</span>])             <span class="cmt"># apel</span>
+<span class="fn">print</span>(<span class="fn">len</span>(buah))           <span class="cmt"># 4</span>
+
+<span class="cmt"># Dictionary (kamus)</span>
+profil = {
+    <span class="str">"nama"</span>: <span class="str">"Budi"</span>,
+    <span class="str">"umur"</span>: <span class="num">10</span>,
+    <span class="str">"hobi"</span>: [<span class="str">"coding"</span>, <span class="str">"membaca"</span>]
+}
+
+<span class="fn">print</span>(profil[<span class="str">"nama"</span>])      <span class="cmt"># Budi</span>
+<span class="fn">print</span>(profil[<span class="str">"hobi"</span>][<span class="num">0</span>])   <span class="cmt"># coding</span>
+
+<span class="cmt"># Menambah data ke dictionary</span>
+profil[<span class="str">"sekolah"</span>] = <span class="str">"SD Maju"</span></div>
+        <div class="tip-box"><strong>Selamat!</strong> Kamu sudah belajar dasar-dasar Python. Python adalah bahasa yang sangat kuat — kamu bisa membuat game, AI, dan banyak hal keren lainnya!</div>
+    </div>
+    
+    <div class="text-center mt-5 mb-5" style="background:#fff; border: 3px solid #111; border-radius: 12px; padding: 30px; box-shadow: 6px 6px 0 #111;">
+        <h4 style="font-weight: 800; margin-bottom: 15px;">Sudah paham dengan Python?</h4>
+        <p style="margin-bottom: 20px;">Klik tombol di bawah ini untuk menandai semua materi selesai!</p>
+        <button class="btn btn-primary btn-lg" onclick="completeCourse('python', 'python_done')" style="box-shadow: 4px 4px 0 #111; border:3px solid #111; font-weight:800; font-family:'Space Grotesk', sans-serif;">✅ Selesaikan Kursus</button>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/auth.js"></script>
+<script>
+function completeCourse(current, next) {
+    const user = JSON.parse(localStorage.getItem('auth_user') || '{}');
+    const email = user.email || 'guest';
+    const progKey = 'course_progress_' + email;
+    let prog = JSON.parse(localStorage.getItem(progKey) || '["html"]');
+    if (!prog.includes(next)) prog.push(next);
+    localStorage.setItem(progKey, JSON.stringify(prog));
+    alert('Luar Biasa! Kamu telah menyelesaikan semua kelas.');
+    window.location.href = '/murid/kelas.html';
+}
+</script>
+</body>
+</html>

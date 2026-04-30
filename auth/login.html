@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - El-pro</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+
+    <div class="login-wrapper">
+        <div class="login-card">
+            <h1>Welcome!</h1>
+            <p>Masuk untuk melanjutkan ke E-Learning</p>
+
+            <div class="alert alert-error" id="loginError" style="display:none"></div>
+            <div class="alert alert-success" id="loginSuccess" style="display:none"></div>
+
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="email@domain.com" required>
+
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" placeholder="Masukkan password" required>
+
+                <button type="submit" class="Login" id="btnLogin">Masuk</button>
+            </form>
+
+            <div class="extra">
+                <p>Belum punya akun? <a href="/auth/register.html">Daftar</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/auth.js"></script>
+    <script>
+
+    async function handleLogin(e) {
+        e.preventDefault();
+        const errorEl = document.getElementById('loginError');
+        const successEl = document.getElementById('loginSuccess');
+        const btn = document.getElementById('btnLogin');
+
+        errorEl.style.display = 'none';
+        successEl.style.display = 'none';
+
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value;
+
+        if (!email || !password) {
+            errorEl.textContent = 'Email dan password wajib diisi';
+            errorEl.style.display = 'block';
+            return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = 'Memproses...';
+
+        try {
+            const res = await fetch(API_BASE + '/api/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            });
+
+            const data = await res.json();
+
+            if (data.success) {
+                localStorage.setItem('auth_token', data.token);
+                localStorage.setItem('auth_user', JSON.stringify(data.user));
+
+                successEl.textContent = 'Login berhasil! Mengalihkan...';
+                successEl.style.display = 'block';
+
+                setTimeout(() => {
+                    window.location.href = getRoleHomePage(data.user.role);
+                }, 1000);
+            } else {
+                errorEl.textContent = data.message;
+                errorEl.style.display = 'block';
+                btn.disabled = false;
+                btn.textContent = 'Masuk';
+            }
+        } catch (err) {
+            errorEl.textContent = 'Tidak dapat terhubung ke server. Pastikan server berjalan.';
+            errorEl.style.display = 'block';
+            btn.disabled = false;
+            btn.textContent = 'Masuk';
+        }
+    }
+    </script>
+</body>
+</html>

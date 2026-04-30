@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/kelasHTML.css">
+    <title>Kelas JavaScript - El-pro</title>
+    <style>
+      .materi-section { background: #fff; border-radius: 14px; padding: 28px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e5e7eb; }
+      .materi-section h4 { color: #d97706; font-weight: 800; margin-bottom: 12px; font-size: 1.25rem; }
+      .materi-section p, .materi-section li { font-size: 0.95rem; line-height: 1.7; color: #333; }
+      .code-box { background: #1e293b; color: #e2e8f0; border-radius: 10px; padding: 16px 20px; font-family: 'Courier New', monospace; font-size: 0.88rem; margin: 12px 0 16px; overflow-x: auto; line-height: 1.6; border: 2px solid #334155; white-space: pre; }
+      .code-box .kw { color: #c084fc; }
+      .code-box .fn { color: #60a5fa; }
+      .code-box .str { color: #34d399; }
+      .code-box .num { color: #f472b6; }
+      .code-box .cmt { color: #64748b; }
+      .tip-box { background: #fef3c7; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 10px 10px 0; margin: 12px 0; font-size: 0.9rem; color: #78350f; }
+      .materi-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+      .materi-nav a { padding: 6px 14px; background: #fef3c7; color: #d97706; border-radius: 8px; text-decoration: none; font-size: 0.82rem; font-weight: 600; transition: all 0.2s; }
+      .materi-nav a:hover { background: #d97706; color: #fff; }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="sidebar-icons">
+      <ul>
+        <li><a href="/index.html"><img src="/assets/image/web icons/home2.svg" class="home-icon"></a></li>
+        <li><a href="/murid/kelas.html"><img src="/assets/image/web icons/homeProfile.svg" class="homeProfile-icon"></a></li>
+        <li><a href="/murid/bookmark.html"><img src="/assets/image/web icons/course.svg" class="course-icon"></a></li>
+        <li><a href="/murid/quiz.html"><img src="/assets/image/web icons/bookmark.svg" class="bookmark-icon"></a></li>
+        <li><a href="/murid/profile.html"><img src="/assets/image/web icons/profile.svg" class="user-profile"></a></li>
+      </ul>
+    </div>
+</div>
+
+<div class="container">
+    <div class="kelas-title">
+        <h3>Kelas JavaScript untuk Pemula</h3>
+        <p>Pelajari cara membuat website menjadi interaktif! JavaScript membuat halaman web bisa bergerak dan merespons.</p>
+    </div>
+
+    <div class="materi-nav">
+      <a href="#bab1">1. Apa itu JavaScript?</a>
+      <a href="#bab2">2. Variabel</a>
+      <a href="#bab3">3. Tipe Data</a>
+      <a href="#bab4">4. Operator</a>
+      <a href="#bab5">5. Kondisi IF-ELSE</a>
+      <a href="#bab6">6. Perulangan</a>
+      <a href="#bab7">7. Fungsi</a>
+      <a href="#bab8">8. Array</a>
+      <a href="#bab9">9. Interaksi DOM</a>
+      <a href="#bab10">10. Event</a>
+    </div>
+
+    <div class="materi-section" id="bab1">
+        <h4>Bab 1 — Apa itu JavaScript?</h4>
+        <p><strong>JavaScript</strong> (disingkat JS) adalah bahasa pemrograman yang membuat halaman web menjadi <strong>hidup dan interaktif</strong>. Kalau HTML adalah tulang dan CSS adalah kulit, maka JavaScript adalah <strong>otaknya</strong>!</p>
+        <p>Dengan JavaScript, kamu bisa:</p>
+        <ul>
+            <li>Membuat tombol yang bisa diklik</li>
+            <li>Menampilkan pesan pop-up</li>
+            <li>Mengubah warna elemen saat diklik</li>
+            <li>Membuat game sederhana</li>
+            <li>Menghitung nilai matematika</li>
+        </ul>
+        <div class="code-box"><span class="cmt">// Cara menampilkan pesan di JavaScript</span>
+<span class="fn">alert</span>(<span class="str">"Halo! Selamat datang di JavaScript!"</span>);
+<span class="fn">console.log</span>(<span class="str">"Pesan ini muncul di konsol browser"</span>);</div>
+    </div>
+
+    <div class="materi-section" id="bab2">
+        <h4>Bab 2 — Variabel</h4>
+        <p>Variabel adalah <strong>tempat untuk menyimpan data</strong>. Bayangkan seperti kotak bernama yang bisa kamu isi apa saja:</p>
+        <div class="code-box"><span class="cmt">// Membuat variabel</span>
+<span class="kw">let</span> nama = <span class="str">"Budi"</span>;
+<span class="kw">let</span> umur = <span class="num">10</span>;
+<span class="kw">let</span> sukaBelajar = <span class="kw">true</span>;
+
+<span class="cmt">// Variabel yang tidak berubah (konstan)</span>
+<span class="kw">const</span> namaSekolah = <span class="str">"SD Maju Jaya"</span>;
+
+<span class="cmt">// Menampilkan isi variabel</span>
+<span class="fn">console.log</span>(nama);     <span class="cmt">// Budi</span>
+<span class="fn">console.log</span>(umur);     <span class="cmt">// 10</span></div>
+        <div class="tip-box"><strong>Ingat:</strong> Gunakan <code>let</code> untuk variabel yang bisa berubah, dan <code>const</code> untuk yang tetap. Hindari <code>var</code> (sudah lama).</div>
+    </div>
+
+    <div class="materi-section" id="bab3">
+        <h4>Bab 3 — Tipe Data</h4>
+        <p>JavaScript punya beberapa jenis data:</p>
+        <div class="code-box"><span class="cmt">// 1. String (teks) — diapit tanda kutip</span>
+<span class="kw">let</span> nama = <span class="str">"Ani"</span>;
+
+<span class="cmt">// 2. Number (angka) — tanpa tanda kutip</span>
+<span class="kw">let</span> umur = <span class="num">12</span>;
+<span class="kw">let</span> tinggi = <span class="num">145.5</span>;
+
+<span class="cmt">// 3. Boolean (benar/salah)</span>
+<span class="kw">let</span> sudahMakan = <span class="kw">true</span>;
+<span class="kw">let</span> sedangHujan = <span class="kw">false</span>;
+
+<span class="cmt">// 4. Array (daftar/kumpulan data)</span>
+<span class="kw">let</span> buah = [<span class="str">"apel"</span>, <span class="str">"jeruk"</span>, <span class="str">"mangga"</span>];
+
+<span class="cmt">// 5. Object (data yang punya properti)</span>
+<span class="kw">let</span> siswa = {
+  nama: <span class="str">"Budi"</span>,
+  umur: <span class="num">10</span>,
+  kelas: <span class="str">"4 SD"</span>
+};</div>
+    </div>
+
+    <div class="materi-section" id="bab4">
+        <h4>Bab 4 — Operator</h4>
+        <div class="code-box"><span class="cmt">// Operator Matematika</span>
+<span class="kw">let</span> a = <span class="num">10</span> + <span class="num">5</span>;   <span class="cmt">// 15 (tambah)</span>
+<span class="kw">let</span> b = <span class="num">10</span> - <span class="num">3</span>;   <span class="cmt">// 7  (kurang)</span>
+<span class="kw">let</span> c = <span class="num">4</span> * <span class="num">3</span>;    <span class="cmt">// 12 (kali)</span>
+<span class="kw">let</span> d = <span class="num">20</span> / <span class="num">4</span>;   <span class="cmt">// 5  (bagi)</span>
+<span class="kw">let</span> e = <span class="num">10</span> % <span class="num">3</span>;   <span class="cmt">// 1  (sisa bagi)</span>
+
+<span class="cmt">// Operator Perbandingan</span>
+<span class="num">5</span> == <span class="num">5</span>    <span class="cmt">// true  (sama dengan)</span>
+<span class="num">5</span> != <span class="num">3</span>    <span class="cmt">// true  (tidak sama)</span>
+<span class="num">10</span> > <span class="num">5</span>    <span class="cmt">// true  (lebih besar)</span>
+<span class="num">3</span> &lt; <span class="num">7</span>     <span class="cmt">// true  (lebih kecil)</span>
+
+<span class="cmt">// Menggabungkan teks</span>
+<span class="kw">let</span> salam = <span class="str">"Halo, "</span> + <span class="str">"Budi!"</span>;  <span class="cmt">// "Halo, Budi!"</span></div>
+    </div>
+
+    <div class="materi-section" id="bab5">
+        <h4>Bab 5 — Kondisi (IF-ELSE)</h4>
+        <p>Kondisi membuat program bisa <strong>mengambil keputusan</strong>:</p>
+        <div class="code-box"><span class="kw">let</span> nilai = <span class="num">85</span>;
+
+<span class="kw">if</span> (nilai >= <span class="num">80</span>) {
+  <span class="fn">console.log</span>(<span class="str">"Selamat, kamu dapat nilai A!"</span>);
+} <span class="kw">else if</span> (nilai >= <span class="num">60</span>) {
+  <span class="fn">console.log</span>(<span class="str">"Lumayan, kamu dapat nilai B."</span>);
+} <span class="kw">else</span> {
+  <span class="fn">console.log</span>(<span class="str">"Ayo belajar lagi ya!"</span>);
+}</div>
+        <div class="tip-box"><strong>Analogi:</strong> IF-ELSE itu seperti persimpangan jalan. Kalau cuaca cerah, pergi ke taman. Kalau hujan, tetap di rumah.</div>
+    </div>
+
+    <div class="materi-section" id="bab6">
+        <h4>Bab 6 — Perulangan (Loop)</h4>
+        <p>Loop membuat komputer mengulangi perintah berkali-kali:</p>
+        <div class="code-box"><span class="cmt">// FOR — ulangi sebanyak yang ditentukan</span>
+<span class="kw">for</span> (<span class="kw">let</span> i = <span class="num">1</span>; i &lt;= <span class="num">5</span>; i++) {
+  <span class="fn">console.log</span>(<span class="str">"Hitungan ke-"</span> + i);
+}
+<span class="cmt">// Output: Hitungan ke-1, ke-2, ke-3, ke-4, ke-5</span>
+
+<span class="cmt">// WHILE — ulangi selama kondisi benar</span>
+<span class="kw">let</span> angka = <span class="num">1</span>;
+<span class="kw">while</span> (angka &lt;= <span class="num">3</span>) {
+  <span class="fn">console.log</span>(<span class="str">"Angka: "</span> + angka);
+  angka++;
+}</div>
+    </div>
+
+    <div class="materi-section" id="bab7">
+        <h4>Bab 7 — Fungsi</h4>
+        <p>Fungsi adalah <strong>kumpulan perintah yang bisa dipanggil berkali-kali</strong>:</p>
+        <div class="code-box"><span class="cmt">// Membuat fungsi</span>
+<span class="kw">function</span> <span class="fn">spiHalo</span>(nama) {
+  <span class="fn">console.log</span>(<span class="str">"Halo, "</span> + nama + <span class="str">"!"</span>);
+}
+
+<span class="cmt">// Memanggil fungsi</span>
+<span class="fn">sapiHalo</span>(<span class="str">"Budi"</span>);   <span class="cmt">// Halo, Budi!</span>
+<span class="fn">sapiHalo</span>(<span class="str">"Ani"</span>);    <span class="cmt">// Halo, Ani!</span>
+
+<span class="cmt">// Fungsi yang mengembalikan nilai</span>
+<span class="kw">function</span> <span class="fn">tambah</span>(a, b) {
+  <span class="kw">return</span> a + b;
+}
+
+<span class="kw">let</span> hasil = <span class="fn">tambah</span>(<span class="num">5</span>, <span class="num">3</span>);  <span class="cmt">// 8</span></div>
+    </div>
+
+    <div class="materi-section" id="bab8">
+        <h4>Bab 8 — Array (Daftar Data)</h4>
+        <div class="code-box"><span class="cmt">// Membuat array</span>
+<span class="kw">let</span> hewan = [<span class="str">"kucing"</span>, <span class="str">"anjing"</span>, <span class="str">"kelinci"</span>, <span class="str">"hamster"</span>];
+
+<span class="cmt">// Mengakses data (mulai dari 0)</span>
+<span class="fn">console.log</span>(hewan[<span class="num">0</span>]);  <span class="cmt">// kucing</span>
+<span class="fn">console.log</span>(hewan[<span class="num">2</span>]);  <span class="cmt">// kelinci</span>
+
+<span class="cmt">// Menambah data</span>
+hewan.<span class="fn">push</span>(<span class="str">"ikan"</span>);
+
+<span class="cmt">// Menghitung jumlah</span>
+<span class="fn">console.log</span>(hewan.length);  <span class="cmt">// 5</span>
+
+<span class="cmt">// Perulangan array</span>
+<span class="kw">for</span> (<span class="kw">let</span> i = <span class="num">0</span>; i &lt; hewan.length; i++) {
+  <span class="fn">console.log</span>(<span class="str">"Hewan: "</span> + hewan[i]);
+}</div>
+    </div>
+
+    <div class="materi-section" id="bab9">
+        <h4>Bab 9 — Interaksi dengan HTML (DOM)</h4>
+        <p>JavaScript bisa mengubah isi halaman web secara langsung:</p>
+        <div class="code-box"><span class="cmt">// Mengubah teks</span>
+document.<span class="fn">getElementById</span>(<span class="str">"judul"</span>).textContent = <span class="str">"Judul Baru!"</span>;
+
+<span class="cmt">// Mengubah warna</span>
+document.<span class="fn">getElementById</span>(<span class="str">"kotak"</span>).style.backgroundColor = <span class="str">"blue"</span>;
+
+<span class="cmt">// Menyembunyikan elemen</span>
+document.<span class="fn">getElementById</span>(<span class="str">"pesan"</span>).style.display = <span class="str">"none"</span>;</div>
+    </div>
+
+    <div class="materi-section" id="bab10">
+        <h4>Bab 10 — Event (Merespons Aksi Pengguna)</h4>
+        <div class="code-box"><span class="cmt">// Merespons klik tombol</span>
+<span class="kw">let</span> tombol = document.<span class="fn">getElementById</span>(<span class="str">"btnKlik"</span>);
+
+tombol.<span class="fn">addEventListener</span>(<span class="str">"click"</span>, <span class="kw">function</span>() {
+  <span class="fn">alert</span>(<span class="str">"Tombol diklik!"</span>);
+});
+
+<span class="cmt">// Event lainnya:</span>
+<span class="cmt">// "mouseover" — saat mouse di atas elemen</span>
+<span class="cmt">// "keydown"   — saat tombol keyboard ditekan</span>
+<span class="cmt">// "submit"    — saat form dikirim</span></div>
+        <div class="tip-box"><strong>Selamat!</strong> Kamu sudah belajar dasar-dasar JavaScript. Dengan ini kamu bisa mulai membuat website yang interaktif!</div>
+    </div>
+    
+    <div class="text-center mt-5 mb-5" style="background:#fff; border: 3px solid #111; border-radius: 12px; padding: 30px; box-shadow: 6px 6px 0 #111;">
+        <h4 style="font-weight: 800; margin-bottom: 15px;">Sudah paham dengan JavaScript?</h4>
+        <p style="margin-bottom: 20px;">Klik tombol di bawah ini untuk menandai kelas selesai dan membuka materi PHP.</p>
+        <button class="btn btn-primary btn-lg" onclick="completeCourse('js', 'php')" style="box-shadow: 4px 4px 0 #111; border:3px solid #111; font-weight:800; font-family:'Space Grotesk', sans-serif;">✅ Tandai Selesai & Buka Kelas PHP</button>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/auth.js"></script>
+<script>
+function completeCourse(current, next) {
+    const user = JSON.parse(localStorage.getItem('auth_user') || '{}');
+    const email = user.email || 'guest';
+    const progKey = 'course_progress_' + email;
+    let prog = JSON.parse(localStorage.getItem(progKey) || '["html"]');
+    if (!prog.includes(next)) prog.push(next);
+    localStorage.setItem(progKey, JSON.stringify(prog));
+    alert('Selamat! Kelas ' + next.toUpperCase() + ' berhasil dibuka.');
+    window.location.href = '/murid/kelas.html';
+}
+</script>
+</body>
+</html>

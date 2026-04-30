@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/kelasHTML.css">
+    <title>Kelas PHP - El-pro</title>
+    <style>
+      .materi-section { background: #fff; border-radius: 14px; padding: 28px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e5e7eb; }
+      .materi-section h4 { color: #6366f1; font-weight: 800; margin-bottom: 12px; font-size: 1.25rem; }
+      .materi-section p, .materi-section li { font-size: 0.95rem; line-height: 1.7; color: #333; }
+      .code-box { background: #1e293b; color: #e2e8f0; border-radius: 10px; padding: 16px 20px; font-family: 'Courier New', monospace; font-size: 0.88rem; margin: 12px 0 16px; overflow-x: auto; line-height: 1.6; border: 2px solid #334155; white-space: pre; }
+      .code-box .kw { color: #c084fc; } .code-box .fn { color: #60a5fa; } .code-box .str { color: #34d399; } .code-box .num { color: #f472b6; } .code-box .cmt { color: #64748b; } .code-box .var { color: #facc15; }
+      .tip-box { background: #eef2ff; border-left: 4px solid #6366f1; padding: 14px 18px; border-radius: 0 10px 10px 0; margin: 12px 0; font-size: 0.9rem; color: #312e81; }
+      .materi-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+      .materi-nav a { padding: 6px 14px; background: #eef2ff; color: #6366f1; border-radius: 8px; text-decoration: none; font-size: 0.82rem; font-weight: 600; transition: all 0.2s; }
+      .materi-nav a:hover { background: #6366f1; color: #fff; }
+    </style>
+</head>
+<body>
+<div class="sidebar"><div class="sidebar-icons"><ul>
+  <li><a href="/index.html"><img src="/assets/image/web icons/home2.svg" class="home-icon"></a></li>
+  <li><a href="/murid/kelas.html"><img src="/assets/image/web icons/homeProfile.svg" class="homeProfile-icon"></a></li>
+  <li><a href="/murid/bookmark.html"><img src="/assets/image/web icons/course.svg" class="course-icon"></a></li>
+  <li><a href="/murid/quiz.html"><img src="/assets/image/web icons/bookmark.svg" class="bookmark-icon"></a></li>
+  <li><a href="/murid/profile.html"><img src="/assets/image/web icons/profile.svg" class="user-profile"></a></li>
+</ul></div></div>
+
+<div class="container">
+    <div class="kelas-title">
+        <h3>Kelas PHP untuk Pemula</h3>
+        <p>Pelajari bahasa pemrograman server! PHP membuat website bisa memproses data, menyimpan ke database, dan lainnya.</p>
+    </div>
+    <div class="materi-nav">
+      <a href="#bab1">1. Apa itu PHP?</a><a href="#bab2">2. Variabel</a><a href="#bab3">3. Tipe Data</a><a href="#bab4">4. Kondisi</a><a href="#bab5">5. Perulangan</a><a href="#bab6">6. Fungsi</a><a href="#bab7">7. Array</a><a href="#bab8">8. Form & PHP</a>
+    </div>
+
+    <div class="materi-section" id="bab1">
+        <h4>Bab 1 — Apa itu PHP?</h4>
+        <p><strong>PHP</strong> adalah bahasa pemrograman yang berjalan di <strong>server</strong> (komputer penyedia website). Berbeda dengan JavaScript yang berjalan di browser, PHP bekerja di belakang layar.</p>
+        <p>PHP bisa digunakan untuk:</p>
+        <ul><li>Membuat sistem login dan registrasi</li><li>Menyimpan data ke database</li><li>Mengirim email otomatis</li><li>Membuat toko online</li></ul>
+        <div class="code-box"><span class="kw">&lt;?php</span>
+  <span class="fn">echo</span> <span class="str">"Halo, Dunia!"</span>;
+<span class="kw">?&gt;</span></div>
+        <div class="tip-box"><strong>Tahukah kamu?</strong> Website besar seperti Facebook dan Wikipedia awalnya dibuat dengan PHP!</div>
+    </div>
+
+    <div class="materi-section" id="bab2">
+        <h4>Bab 2 — Variabel di PHP</h4>
+        <p>Di PHP, semua variabel dimulai dengan tanda dolar <code>$</code>:</p>
+        <div class="code-box"><span class="kw">&lt;?php</span>
+<span class="var">$nama</span> = <span class="str">"Budi"</span>;
+<span class="var">$umur</span> = <span class="num">10</span>;
+<span class="var">$tinggi</span> = <span class="num">140.5</span>;
+
+<span class="fn">echo</span> <span class="str">"Nama: "</span> . <span class="var">$nama</span>;     <span class="cmt">// Nama: Budi</span>
+<span class="fn">echo</span> <span class="str">"Umur: "</span> . <span class="var">$umur</span>;     <span class="cmt">// Umur: 10</span>
+<span class="kw">?&gt;</span></div>
+        <div class="tip-box"><strong>Perbedaan dengan JS:</strong> Di PHP pakai <code>$</code> di depan variabel dan titik <code>.</code> untuk menggabungkan teks.</div>
+    </div>
+
+    <div class="materi-section" id="bab3">
+        <h4>Bab 3 — Tipe Data</h4>
+        <div class="code-box"><span class="kw">&lt;?php</span>
+<span class="var">$teks</span> = <span class="str">"Halo"</span>;           <span class="cmt">// String</span>
+<span class="var">$angka</span> = <span class="num">42</span>;                <span class="cmt">// Integer</span>
+<span class="var">$desimal</span> = <span class="num">3.14</span>;            <span class="cmt">// Float</span>
+<span class="var">$benar</span> = <span class="kw">true</span>;              <span class="cmt">// Boolean</span>
+<span class="var">$daftar</span> = [<span class="str">"a"</span>, <span class="str">"b"</span>, <span class="str">"c"</span>]; <span class="cmt">// Array</span>
+<span class="kw">?&gt;</span></div>
+    </div>
+
+    <div class="materi-section" id="bab4">
+        <h4>Bab 4 — Kondisi IF-ELSE</h4>
+        <div class="code-box"><span class="kw">&lt;?php</span>
+<span class="var">$nilai</span> = <span class="num">85</span>;
+
+<span class="kw">if</span> (<span class="var">$nilai</span> >= <span class="num">80</span>) {
+    <span class="fn">echo</span> <span class="str">"Nilai A - Luar Biasa!"</span>;
+} <span class="kw">elseif</span> (<span class="var">$nilai</span> >= <span class="num">60</span>) {
+    <span class="fn">echo</span> <span class="str">"Nilai B - Bagus!"</span>;
+} <span class="kw">else</span> {
+    <span class="fn">echo</span> <span class="str">"Perlu belajar lagi."</span>;
+}
+<span class="kw">?&gt;</span></div>
+    </div>
+
+    <div class="materi-section" id="bab5">
+        <h4>Bab 5 — Perulangan</h4>
+        <div class="code-box"><span class="kw">&lt;?php</span>
+<span class="cmt">// FOR loop</span>
+<span class="kw">for</span> (<span class="var">$i</span> = <span class="num">1</span>; <span class="var">$i</span> &lt;= <span class="num">5</span>; <span class="var">$i</span>++) {
+    <span class="fn">echo</span> <span class="str">"Hitungan: "</span> . <span class="var">$i</span> . <span class="str">"&lt;br&gt;"</span>;
+}
+
+<span class="cmt">// FOREACH — untuk array</span>
+<span class="var">$buah</span> = [<span class="str">"Apel"</span>, <span class="str">"Jeruk"</span>, <span class="str">"Mangga"</span>];
+<span class="kw">foreach</span> (<span class="var">$buah</span> <span class="kw">as</span> <span class="var">$b</span>) {
+    <span class="fn">echo</span> <span class="str">"Buah: "</span> . <span class="var">$b</span> . <span class="str">"&lt;br&gt;"</span>;
+}
+<span class="kw">?&gt;</span></div>
+    </div>
+
+    <div class="materi-section" id="bab6">
+        <h4>Bab 6 — Fungsi</h4>
+        <div class="code-box"><span class="kw">&lt;?php</span>
+<span class="kw">function</span> <span class="fn">spiHalo</span>(<span class="var">$nama</span>) {
+    <span class="fn">echo</span> <span class="str">"Halo, "</span> . <span class="var">$nama</span> . <span class="str">"!"</span>;
+}
+
+<span class="fn">sapiHalo</span>(<span class="str">"Budi"</span>);  <span class="cmt">// Halo, Budi!</span>
+<span class="fn">sapiHalo</span>(<span class="str">"Ani"</span>);   <span class="cmt">// Halo, Ani!</span>
+
+<span class="cmt">// Fungsi dengan return</span>
+<span class="kw">function</span> <span class="fn">tambah</span>(<span class="var">$a</span>, <span class="var">$b</span>) {
+    <span class="kw">return</span> <span class="var">$a</span> + <span class="var">$b</span>;
+}
+<span class="fn">echo</span> <span class="fn">tambah</span>(<span class="num">5</span>, <span class="num">3</span>);  <span class="cmt">// 8</span>
+<span class="kw">?&gt;</span></div>
+    </div>
+
+    <div class="materi-section" id="bab7">
+        <h4>Bab 7 — Array</h4>
+        <div class="code-box"><span class="kw">&lt;?php</span>
+<span class="cmt">// Array biasa</span>
+<span class="var">$warna</span> = [<span class="str">"merah"</span>, <span class="str">"biru"</span>, <span class="str">"hijau"</span>];
+<span class="fn">echo</span> <span class="var">$warna</span>[<span class="num">0</span>];  <span class="cmt">// merah</span>
+
+<span class="cmt">// Array asosiatif (dengan kunci)</span>
+<span class="var">$siswa</span> = [
+    <span class="str">"nama"</span> => <span class="str">"Budi"</span>,
+    <span class="str">"umur"</span> => <span class="num">10</span>,
+    <span class="str">"kelas"</span> => <span class="str">"4 SD"</span>
+];
+<span class="fn">echo</span> <span class="var">$siswa</span>[<span class="str">"nama"</span>];  <span class="cmt">// Budi</span>
+<span class="kw">?&gt;</span></div>
+    </div>
+
+    <div class="materi-section" id="bab8">
+        <h4>Bab 8 — Menangkap Data dari Form HTML</h4>
+        <div class="code-box"><span class="cmt">&lt;!-- file: form.html --&gt;</span>
+&lt;form action=<span class="str">"proses.php"</span> method=<span class="str">"POST"</span>&gt;
+  &lt;input type=<span class="str">"text"</span> name=<span class="str">"nama"</span>&gt;
+  &lt;button type=<span class="str">"submit"</span>&gt;Kirim&lt;/button&gt;
+&lt;/form&gt;
+
+<span class="cmt">// file: proses.php</span>
+<span class="kw">&lt;?php</span>
+<span class="var">$nama</span> = <span class="var">$_POST</span>[<span class="str">"nama"</span>];
+<span class="fn">echo</span> <span class="str">"Halo, "</span> . <span class="var">$nama</span> . <span class="str">"! Selamat datang."</span>;
+<span class="kw">?&gt;</span></div>
+        <div class="tip-box"><strong>Selamat!</strong> Kamu sudah belajar dasar-dasar PHP. PHP sangat berguna untuk membuat website yang bisa menyimpan dan memproses data!</div>
+    </div>
+    
+    <div class="text-center mt-5 mb-5" style="background:#fff; border: 3px solid #111; border-radius: 12px; padding: 30px; box-shadow: 6px 6px 0 #111;">
+        <h4 style="font-weight: 800; margin-bottom: 15px;">Sudah paham dengan PHP?</h4>
+        <p style="margin-bottom: 20px;">Klik tombol di bawah ini untuk menandai kelas selesai dan membuka materi Python.</p>
+        <button class="btn btn-primary btn-lg" onclick="completeCourse('php', 'python')" style="box-shadow: 4px 4px 0 #111; border:3px solid #111; font-weight:800; font-family:'Space Grotesk', sans-serif;">✅ Tandai Selesai & Buka Kelas Python</button>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/auth.js"></script>
+<script>
+function completeCourse(current, next) {
+    const user = JSON.parse(localStorage.getItem('auth_user') || '{}');
+    const email = user.email || 'guest';
+    const progKey = 'course_progress_' + email;
+    let prog = JSON.parse(localStorage.getItem(progKey) || '["html"]');
+    if (!prog.includes(next)) prog.push(next);
+    localStorage.setItem(progKey, JSON.stringify(prog));
+    alert('Selamat! Kelas ' + next.toUpperCase() + ' berhasil dibuka.');
+    window.location.href = '/murid/kelas.html';
+}
+</script>
+</body>
+</html>

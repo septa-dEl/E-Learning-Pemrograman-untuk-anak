@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/kelasHTML.css">
+    <title>Logika Dasar Pemrograman - El-pro</title>
+    <style>
+      .materi-section { background: #fff; border-radius: 14px; padding: 28px; margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border: 2px solid #e5e7eb; }
+      .materi-section h4 { color: #f59e0b; font-weight: 900; margin-bottom: 12px; font-size: 1.5rem; text-transform: uppercase;}
+      .materi-section p, .materi-section li { font-size: 1.05rem; line-height: 1.8; color: #444; font-weight: 500; }
+      
+      .story-box { background: #fffbeb; border: 3px dashed #fcd34d; border-radius: 12px; padding: 20px; margin: 15px 0; display: flex; gap: 15px; align-items: start;}
+      .story-box .icon { font-size: 2rem; }
+      
+      .code-sim { background: #1e293b; color: #e2e8f0; border-radius: 12px; padding: 20px; font-family: 'Space Grotesk', monospace; font-size: 1rem; font-weight: bold; margin: 15px 0; border: 4px solid #334155; }
+      .code-sim .block { display: inline-block; padding: 8px 12px; border-radius: 8px; margin: 4px 0; text-shadow: 1px 1px 0 rgba(0,0,0,0.2); }
+      .code-sim .bg-blue { background: #3b82f6; }
+      .code-sim .bg-green { background: #10b981; }
+      .code-sim .bg-yellow { background: #f59e0b; color: #fff; }
+      .code-sim .bg-red { background: #ef4444; }
+      
+      .tip-box { background: #ecfdf5; border-left: 6px solid #10b981; padding: 16px 20px; border-radius: 0 12px 12px 0; margin: 15px 0; font-size: 1rem; color: #065f46; font-weight: bold;}
+      .materi-nav { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
+      .materi-nav a { padding: 10px 18px; background: #fef08a; color: #b45309; border-radius: 10px; text-decoration: none; font-size: 0.95rem; font-weight: 800; transition: all 0.2s; border: 2px solid #fde047; }
+      .materi-nav a:hover { background: #f59e0b; color: #fff; border-color: #b45309; transform: translateY(-2px); box-shadow: 0 4px 0 #b45309; }
+      
+      .hero-title { background: #f59e0b; color: white; padding: 30px; border-radius: 15px; text-align: center; border: 4px solid #b45309; box-shadow: 6px 6px 0 #b45309; position: relative; overflow: hidden; margin-bottom: 40px;}
+    </style>
+</head>
+<body>
+<div class="sidebar"><div class="sidebar-icons"><ul>
+  <li><a href="/index.html"><img src="/assets/image/web icons/home2.svg" class="home-icon"></a></li>
+  <li><a href="/murid/kelas.html"><img src="/assets/image/web icons/homeProfile.svg" class="homeProfile-icon"></a></li>
+  <li><a href="/murid/bookmark.html"><img src="/assets/image/web icons/course.svg" class="course-icon"></a></li>
+  <li><a href="/murid/quiz.html"><img src="/assets/image/web icons/bookmark.svg" class="bookmark-icon"></a></li>
+  <li><a href="/murid/profile.html"><img src="/assets/image/web icons/profile.svg" class="user-profile"></a></li>
+</ul></div></div>
+
+<div class="container" style="padding-top: 40px; padding-bottom: 60px; max-width: 900px;">
+    
+    <div class="hero-title">
+        <h1 style="font-weight: 900; font-size: 2.5rem; margin-bottom: 10px; text-shadow: 2px 2px 0 #b45309;">🚀 Kelas Dasar: Cara Berpikir Komputer</h1>
+        <p style="font-size: 1.2rem; font-weight: 600; opacity: 0.9;">Gratis untuk semua! Mari belajar bagaimana robot dan komputer berpikir sebelum kita mulai mengetik kode.</p>
+    </div>
+    
+    <div class="materi-nav">
+      <a href="#bab1">1. Apa itu Logika? 🧠</a>
+      <a href="#bab2">2. Urutan (Sequence) 🔢</a>
+      <a href="#bab3">3. Percabangan (Kondisi) 🔀</a>
+    </div>
+
+    <!-- BAB 1 -->
+    <div class="materi-section" id="bab1" style="border-color: #3b82f6;">
+        <h4 style="color: #2563eb;">🧠 Bab 1 — Komputer itu Pintar atau Bodoh?</h4>
+        <p>Sebenarnya, komputer itu sangat cepat, tapi dia <strong>tidak tahu apa-apa</strong> sampai kita memberitahunya! Kita harus memberikan instruksi yang sangat jelas. Inilah yang dinamakan <strong>Logika Pemrograman</strong>.</p>
+        
+        <div class="story-box">
+            <div class="icon">🤖</div>
+            <div>
+                <strong style="color: #b45309; display: block; margin-bottom: 5px;">Cerita Robot Algo:</strong>
+                <p style="margin: 0; font-size: 1rem;">Bayangkan kamu punya robot pembuat roti lapis. Kalau kamu bilang "Buat roti lapis!", robot tidak akan mengerti. Kamu harus bilang: "1. Ambil roti, 2. Oleskan selai, 3. Tutup dengan roti lain."</p>
+            </div>
+        </div>
+        
+        <div class="tip-box">
+            <strong>Kunci Utama:</strong> Coding / Pemrograman adalah membagi sebuah masalah besar menjadi langkah-langkah kecil yang sangat detail.
+        </div>
+    </div>
+
+    <!-- BAB 2 -->
+    <div class="materi-section" id="bab2" style="border-color: #10b981;">
+        <h4 style="color: #059669;">🔢 Bab 2 — Urutan (Sequence)</h4>
+        <p><strong>Sequence</strong> adalah aturan paling penting. Komputer akan membaca dan menjalankan instruksi dari <strong>ATAS ke BAWAH</strong>, satu per satu.</p>
+        <p>Jika urutannya terbalik, hasilnya pasti kacau! Coba lihat contoh memasak mie instan di bawah ini:</p>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="code-sim" style="border-color: #10b981;">
+                    <div style="color: #10b981; margin-bottom: 10px;">✅ URUTAN BENAR:</div>
+                    <div class="block bg-blue">1. Rebus Air Panas</div><br>
+                    <div class="block bg-green">2. Masukkan Mie</div><br>
+                    <div class="block bg-yellow">3. Tuang Bumbu</div><br>
+                    <div class="block bg-red">4. Angkat & Makan</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="code-sim" style="border-color: #ef4444;">
+                    <div style="color: #ef4444; margin-bottom: 10px;">❌ URUTAN SALAH:</div>
+                    <div class="block bg-red">1. Angkat & Makan</div><br>
+                    <div class="block bg-yellow">2. Tuang Bumbu</div><br>
+                    <div class="block bg-green">3. Masukkan Mie</div><br>
+                    <div class="block bg-blue">4. Rebus Air Panas</div>
+                </div>
+            </div>
+        </div>
+        
+        <p style="margin-top: 15px;">Kalau urutannya salah, kita malah makan mie yang masih mentah! Di dunia programming, jika urutannya salah, programnya akan <strong>Error (Rusak)</strong>.</p>
+    </div>
+
+    <!-- BAB 3 -->
+    <div class="materi-section" id="bab3" style="border-color: #f59e0b;">
+        <h4 style="color: #d97706;">🔀 Bab 3 — Kondisi (Percabangan IF-ELSE)</h4>
+        <p>Di dunia nyata, kita sering membuat keputusan. Misalnya: "Jika di luar hujan, pakaikan payung. Jika tidak, pakai kacamata hitam."</p>
+        <p>Di komputer, kita menggunakan blok <strong>IF</strong> (Jika) dan <strong>ELSE</strong> (Selain itu).</p>
+        
+        <div class="story-box" style="background: #f0fdf4; border-color: #4ade80;">
+            <div class="icon">☁️</div>
+            <div>
+                <strong style="color: #166534; display: block; margin-bottom: 5px;">Mendeteksi Cuaca</strong>
+                <p style="margin: 0; font-size: 1rem;">Kita minta robot mengecek cuaca sebelum bermain keluar.</p>
+            </div>
+        </div>
+
+        <div class="code-sim" style="border-color: #64748b;">
+            <div class="block bg-blue" style="border-radius: 8px 8px 0 0;">IF (Cuaca == Hujan)</div><br>
+            <div class="block bg-green" style="margin-left: 20px; border-radius: 0;">Main game di dalam rumah</div><br>
+            <div class="block bg-yellow" style="border-radius: 0;">ELSE</div><br>
+            <div class="block bg-red" style="margin-left: 20px; border-radius: 0;">Main bola di lapangan</div><br>
+            <div class="block bg-blue" style="border-radius: 0 0 8px 8px;">END IF</div>
+        </div>
+        
+        <p><strong>Bagaimana membacanya?</strong></p>
+        <ul>
+            <li>Jika cuaca benar-benar Hujan, maka robot akan menyuruhmu main game di dalam rumah.</li>
+            <li><strong>ELSE</strong> bekerja seperti rencana cadangan. Jika tidak hujan (mungkin cerah atau mendung), robot otomatis menyuruhmu main bola di lapangan.</li>
+        </ul>
+        
+        <div class="tip-box" style="border-color: #f59e0b; background: #fffbeb; color: #b45309;">
+            <strong>Maju ke Tahap Selanjutnya!</strong>
+            Sekarang kamu sudah menguasai konsep Sequence dan Kondisi IF-ELSE. Selanjutnya kamu bisa membuktikan kehebatanmu dengan memainkan Game Tantangan!
+        </div>
+    </div>
+    
+    <!-- FOOTER NAV -->
+    <div class="text-center mt-5 mb-5" style="background:#fff; border: 4px solid #10b981; border-radius: 15px; padding: 35px; box-shadow: 6px 6px 0 #10b981;">
+        <div style="font-size: 3rem; margin-bottom: 10px;">🎮</div>
+        <h3 style="font-weight: 800; color: #059669; margin-bottom: 15px;">Waktunya Bermain!</h3>
+        <p style="font-size: 1.1rem; color: #444; margin-bottom: 25px; font-weight: 600;">Logika ini sangat mudah tapi super penting! Ayo terapkan langsung di <strong>Arena Tantangan Blok</strong> atau daftar di Kelas HTML pertama kamu.</p>
+        
+        <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+            <a href="/murid/quiz.html" class="btn btn-primary btn-lg" style="background: #3b82f6; box-shadow: 4px 4px 0 #1e3a8a; border:3px solid #1e3a8a; font-weight:800; font-family:'Space Grotesk', sans-serif;">Pindah ke Arena Tantangan</a>
+            <button onclick="completeCourse('logika_dasar', 'html')" class="btn btn-success btn-lg" style="background: #10b981; box-shadow: 4px 4px 0 #064e3b; border:3px solid #064e3b; font-weight:800; font-family:'Space Grotesk', sans-serif;">Tandai Selesai & Ke Kelas Lanjut</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/auth.js"></script>
+<script>
+function completeCourse(current, next) {
+    const user = JSON.parse(localStorage.getItem('auth_user') || '{}');
+    const email = user.email || 'guest';
+    const progKey = 'course_progress_' + email;
+    let prog = JSON.parse(localStorage.getItem(progKey) || '["logika_dasar"]');
+    
+    if (!prog.includes(current)) prog.push(current); //tandai ini selesai
+    if (!prog.includes(next)) prog.push(next); //buka html
+    
+    localStorage.setItem(progKey, JSON.stringify(prog));
+    alert('Selamat! Kamu telah menguasai Pola Pikir Komputer. Kelas berikutnya (HTML) sudah dibuka!');
+    window.location.href = '/murid/kelas.html';
+}
+</script>
+</body>
+</html>

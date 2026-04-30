@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/kelas.css">
+  <title>Manajemen Akun - El-pro</title>
+  <style>
+    .admin-page { padding: 30px 16px; font-family: "Space Grotesk", sans-serif; }
+    .admin-page h3 { font-weight: 800; margin-bottom: 8px; color: #111; font-size: 2rem; }
+    .admin-page .subtitle { color: #555; font-size: 1rem; font-weight: 600; margin-bottom: 28px; }
+    .admin-denied { text-align: center; padding: 60px 20px; }
+    .admin-denied h4 { font-weight: 800; margin-bottom: 10px; font-size: 1.8rem; color: #111; }
+
+    .admin-card { background: #fff; border: 3px solid #111; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 4px 4px 0 #111; transition: transform 0.2s; }
+    .admin-card:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 #111; }
+    
+    .table-custom { width: 100%; border-collapse: separate; border-spacing: 0; border: 3px solid #111; border-radius: 8px; overflow: hidden; }
+    .table-custom th, .table-custom td { padding: 12px 16px; border-bottom: 2px solid #111; border-right: 2px solid #111; text-align: left; vertical-align: middle; }
+    .table-custom th:last-child, .table-custom td:last-child { border-right: none; }
+    .table-custom tr:last-child td { border-bottom: none; }
+    .table-custom thead { background: #facc15; font-weight: 800; text-transform: uppercase; }
+    .table-custom tbody tr { background: #fff; }
+    .table-custom tbody tr:nth-child(even) { background: #f9f9f9; }
+
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-weight: 800; font-size: 0.85rem; margin-bottom: 6px; text-transform: uppercase; color: #111; }
+    .form-group select { width: 100%; padding: 8px; border: 2px solid #111; border-radius: 6px; font-family: inherit; font-size: 0.9rem; font-weight: 600; }
+    .form-group input { width: 100%; padding: 12px; border: 3px solid #111; border-radius: 8px; font-family: inherit; font-size: 0.95rem; background: #fff; box-shadow: inset 2px 2px 0 rgba(0,0,0,0.05); }
+    .form-group input:focus { border-color: #3b82f6; outline: none; box-shadow: 0 0 0 3px rgba(59,130,246,0.3); }
+
+    .modal-bg { display: none; position: fixed; inset: 0; background: rgba(17,17,17,0.8); z-index: 9999; place-items: center; backdrop-filter: blur(4px); }
+    .modal-bg.show { display: grid; }
+    .modal-content { background: #fff; border-radius: 12px; padding: 28px; width: min(500px, 92vw); max-height: 85vh; overflow-y: auto; border: 4px solid #111; box-shadow: 8px 8px 0 #111; }
+    .modal-content h4 { font-weight: 900; margin-bottom: 20px; font-size: 1.5rem; text-transform: uppercase; border-bottom: 3px solid #111; padding-bottom: 10px; }
+    
+    .btn-sm { padding: 8px 16px; border-radius: 6px; font-size: 0.85rem; font-weight: 800; border: 2px solid #111; cursor: pointer; font-family: inherit; box-shadow: 2px 2px 0 #111; text-transform: uppercase; }
+    .btn-sm:active { transform: translate(2px, 2px); box-shadow: 0 0 0 #111; }
+    .btn-del { background: #f87171; color: #111; }
+    .btn-add { background: #3b82f6; color: #fff; padding: 12px 28px; font-size: 0.95rem; margin-bottom: 20px; box-shadow: 4px 4px 0 #111; display: inline-block; }
+
+    /* Custom Toast Notification */
+    .toast-container { position: fixed; top: 20px; right: 20px; z-index: 10000; display: flex; flex-direction: column; gap: 10px; }
+    .toast-brutal { background: #fff; border: 3px solid #111; padding: 16px 24px; font-weight: 800; border-radius: 8px; box-shadow: 6px 6px 0 #111; transform: translateX(120%); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: flex; align-items: center; gap: 12px; font-family: "Space Grotesk", sans-serif; }
+    .toast-brutal.show { transform: translateX(0); }
+    .toast-success { background: #00e676; color: #111; }
+    .toast-error { background: #ff4081; color: #fff; }
+
+    /* Custom Confirm Modal */
+    .confirm-modal-content { text-align: center; max-width: 400px; width: 90vw; padding: 40px 24px; }
+    .confirm-icon { font-size: 3rem; margin-bottom: 20px; line-height: 1; }
+    .confirm-msg { font-size: 1.1rem; font-weight: 800; margin-bottom: 30px; font-family: "Space Grotesk", sans-serif; color: #111;}
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <div class="sidebar-icons">
+      <ul id="mainSidebarUl">
+        <li><a href="/admin/dashboard.html"><img src="/assets/image/web icons/home2.svg" class="home-icon"></a></li>
+        <li><a href="/admin/users.html" class="active"><img src="/assets/image/web icons/profile.svg" class="user-profile" title="Manajemen Akun"></a></li>
+        <li><a href="/admin/profile.html"><img src="/assets/image/web icons/profile.svg" class="user-profile" title="Profil"></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container admin-page" id="adminContent" style="display:none">
+    <h3>Manajemen Akun</h3>
+    <p class="subtitle">Kelola akses dan hak pengguna (Murid & Guru)</p>
+
+    <button class="btn-sm btn-add" onclick="openAddUserModal()">+ Tambah Akun</button>
+
+    <div class="admin-card" style="overflow-x: auto;">
+      <table class="table-custom">
+        <thead>
+          <tr>
+            <th>Nama Lengkap</th>
+            <th>Email</th>
+            <th>Peran (Role)</th>
+            <th style="width: 120px; text-align: center;">Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="usersTableBody">
+          <tr><td colspan="4" style="text-align: center;">Memuat data...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Access denied -->
+  <div class="container admin-page admin-denied" id="adminDenied" style="display:none">
+    <h4>Akses Ditolak</h4>
+    <p>Halaman ini eksklusif untuk Administrator.</p>
+    <a href="/index.html" class="btn btn-primary" style="border: 3px solid #111; font-weight: bold; margin-top: 15px;">Kembali ke Beranda</a>
+  </div>
+
+  <!-- Modal Tambah Akun -->
+  <div class="modal-bg" id="addUserModal">
+    <div class="modal-content">
+      <h4 id="modalTitle">Tambah Akun Baru</h4>
+      <div id="modalAlert" style="display:none; color: #f87171; font-weight: 600; margin-bottom: 15px;"></div>
+      <div class="form-group"><label>Nama Lengkap</label><input id="fFullname" placeholder="John Doe"></div>
+      <div class="form-group"><label>Email</label><input type="email" id="fEmail" placeholder="email@contoh.com"></div>
+      <div class="form-group"><label>Password</label><input type="password" id="fPassword" placeholder="Minimal 6 karakter"></div>
+      <div class="form-group"><label>Peran (Role)</label>
+        <select id="fRole" style="padding: 12px;">
+          <option value="user">Siswa</option>
+          <option value="guru">Guru / Dosen</option>
+          <option value="admin">Administrator</option>
+        </select>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:24px">
+        <button class="btn-sm btn-del" onclick="closeAddUserModal()" style="flex:1">Batal</button>
+        <button class="btn-sm btn-add" onclick="saveNewUser()" style="flex:1; margin-bottom: 0;" id="btnSaveUser">Simpan</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Custom Confirm Modal -->
+  <div class="modal-bg" id="confirmModal">
+    <div class="modal-content confirm-modal-content">
+      <div class="confirm-icon">⚠️</div>
+      <div class="confirm-msg" id="confirmMessage">Yakin ingin menghapus ini?</div>
+      <div style="display:flex;gap:12px">
+        <button class="btn-sm" style="flex:1; background:#fff;" onclick="closeConfirmModal()">Batal</button>
+        <button class="btn-sm btn-del" style="flex:1;" id="btnConfirmAction">Hapus</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/auth.js"></script>
+  <script>
+    // --- UI Helpers ---
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = `toast-brutal toast-${type}`;
+      toast.innerHTML = type === 'success' ? `✅ ${message}` : `❌ ${message}`;
+      container.appendChild(toast);
+      
+      // Delay to allow DOM repaint to animate sliding in
+      setTimeout(() => toast.classList.add('show'), 10);
+      
+      // Remove after 3s
+      setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
+    }
+
+    let confirmActionCallback = null;
+    function showConfirm(message, callback) {
+      document.getElementById('confirmMessage').textContent = message;
+      document.getElementById('confirmModal').classList.add('show');
+      confirmActionCallback = callback;
+    }
+
+    function closeConfirmModal() {
+      document.getElementById('confirmModal').classList.remove('show');
+      confirmActionCallback = null;
+    }
+
+    document.getElementById('btnConfirmAction').addEventListener('click', () => {
+      if (confirmActionCallback) confirmActionCallback();
+      closeConfirmModal();
+    });
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      const user = await checkAuth();
+      if (!user) return;
+
+      if (user.role === 'admin') {
+        document.getElementById('adminContent').style.display = 'block';
+        loadUsers();
+      } else {
+        document.getElementById('adminDenied').style.display = 'block';
+      }
+    });
+
+    async function loadUsers() {
+      const token = localStorage.getItem('auth_token');
+      try {
+        const res = await fetch(API_BASE + '/api/users', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token })
+        });
+        const data = await res.json();
+        
+        if (data.success) {
+          const tbody = document.getElementById('usersTableBody');
+          tbody.innerHTML = data.users.map(u => `
+            <tr>
+              <td style="font-weight: 700;">${u.fullname}</td>
+              <td style="color: #444;">${u.email}</td>
+              <td>
+                <select class="form-group" onchange="updateUserRole(${u.id}, this.value)">
+                  <option value="user" ${u.role === 'user' ? 'selected' : ''}>Siswa</option>
+                  <option value="guru" ${u.role === 'guru' ? 'selected' : ''}>Guru / Dosen</option>
+                  <option value="admin" ${u.role === 'admin' ? 'selected' : ''}>Admin</option>
+                </select>
+              </td>
+              <td style="text-align: center;">
+                <button class="btn-sm btn-del" onclick="deleteUserRow(${u.id})">Hapus</button>
+              </td>
+            </tr>
+          `).join('');
+        }
+      } catch (e) {
+        document.getElementById('usersTableBody').innerHTML = '<tr><td colspan="4" style="text-align:center;color:red;">Gagal memuat data</td></tr>';
+      }
+    }
+
+    async function updateUserRole(userId, newRole) {
+      const token = localStorage.getItem('auth_token');
+      try {
+        const res = await fetch(API_BASE + '/api/users/update_role', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token, user_id: userId, role: newRole })
+        });
+        const data = await res.json();
+        
+        if (data.success) {
+           showToast(data.message, 'success');
+        } else {
+           showToast(data.message, 'error');
+           loadUsers(); // reload to revert
+        }
+      } catch (e) {
+        showToast("Gagal menghubungi server", 'error');
+        loadUsers();
+      }
+    }
+
+    function deleteUserRow(userId) {
+      showConfirm('Peringatan: Hapus akun ini secara permanen dari sistem?', async () => {
+        const token = localStorage.getItem('auth_token');
+        try {
+          const res = await fetch(API_BASE + '/api/users/delete', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ token, user_id: userId })
+          });
+          const data = await res.json();
+          
+          if (data.success) {
+             showToast(data.message, 'success');
+             loadUsers();
+          } else {
+             showToast(data.message, 'error');
+          }
+        } catch (e) {
+          showToast("Koneksi gagal saat menghapus akun", "error");
+        }
+      });
+    }
+
+    function openAddUserModal() {
+      document.getElementById('addUserModal').classList.add('show');
+      document.getElementById('fFullname').value = '';
+      document.getElementById('fEmail').value = '';
+      document.getElementById('fPassword').value = '';
+      document.getElementById('fRole').value = 'user';
+      document.getElementById('modalAlert').style.display = 'none';
+    }
+
+    function closeAddUserModal() {
+      document.getElementById('addUserModal').classList.remove('show');
+    }
+
+    async function saveNewUser() {
+      const fullname = document.getElementById('fFullname').value.trim();
+      const email = document.getElementById('fEmail').value.trim();
+      const password = document.getElementById('fPassword').value;
+      const role = document.getElementById('fRole').value;
+      const btn = document.getElementById('btnSaveUser');
+      const alertBox = document.getElementById('modalAlert');
+
+      alertBox.style.display = 'none';
+
+      if (!fullname || !email || !password) {
+        alertBox.textContent = 'Semua field wajib diisi';
+        alertBox.style.display = 'block';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Menyimpan...';
+
+      const token = localStorage.getItem('auth_token');
+      try {
+        const res = await fetch(API_BASE + '/api/users/add', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token, fullname, email, password, role })
+        });
+        
+        const data = await res.json();
+        if (data.success) {
+          showToast('Akun berhasil ditambahkan!', 'success');
+          closeAddUserModal();
+          loadUsers();
+        } else {
+          alertBox.textContent = data.message;
+          alertBox.style.display = 'block';
+        }
+      } catch (e) {
+        alertBox.textContent = 'Gagal menghubungi server';
+        alertBox.style.display = 'block';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Simpan';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/kelasHTML.css">
+    <title>Kelas CSS - El-pro</title>
+    <style>
+      .materi-section { background: #fff; border-radius: 14px; padding: 28px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e5e7eb; }
+      .materi-section h4 { color: #7c3aed; font-weight: 800; margin-bottom: 12px; font-size: 1.25rem; }
+      .materi-section p, .materi-section li { font-size: 0.95rem; line-height: 1.7; color: #333; }
+      .code-box { background: #1e293b; color: #e2e8f0; border-radius: 10px; padding: 16px 20px; font-family: 'Courier New', monospace; font-size: 0.88rem; margin: 12px 0 16px; overflow-x: auto; line-height: 1.6; border: 2px solid #334155; white-space: pre; }
+      .code-box .sel { color: #f472b6; }
+      .code-box .prop { color: #60a5fa; }
+      .code-box .val { color: #34d399; }
+      .code-box .cmt { color: #64748b; }
+      .tip-box { background: #ede9fe; border-left: 4px solid #7c3aed; padding: 14px 18px; border-radius: 0 10px 10px 0; margin: 12px 0; font-size: 0.9rem; color: #3b1f7e; }
+      .demo-box { border: 2px dashed #c4b5fd; border-radius: 10px; padding: 20px; margin: 12px 0; background: #faf5ff; text-align: center; }
+      .materi-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+      .materi-nav a { padding: 6px 14px; background: #ede9fe; color: #7c3aed; border-radius: 8px; text-decoration: none; font-size: 0.82rem; font-weight: 600; transition: all 0.2s; }
+      .materi-nav a:hover { background: #7c3aed; color: #fff; }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="sidebar-icons">
+      <ul>
+        <li><a href="/index.html"><img src="/assets/image/web icons/home2.svg" class="home-icon"></a></li>
+        <li><a href="/murid/kelas.html"><img src="/assets/image/web icons/homeProfile.svg" class="homeProfile-icon"></a></li>
+        <li><a href="/murid/bookmark.html"><img src="/assets/image/web icons/course.svg" class="course-icon"></a></li>
+        <li><a href="/murid/quiz.html"><img src="/assets/image/web icons/bookmark.svg" class="bookmark-icon"></a></li>
+        <li><a href="/murid/profile.html"><img src="/assets/image/web icons/profile.svg" class="user-profile"></a></li>
+      </ul>
+    </div>
+</div>
+
+<div class="container">
+    <div class="kelas-title">
+        <h3>Kelas CSS untuk Pemula</h3>
+        <p>Pelajari cara mempercantik halaman web dengan CSS! Buat website-mu berwarna dan keren.</p>
+    </div>
+
+    <div class="materi-nav">
+      <a href="#bab1">1. Apa itu CSS?</a>
+      <a href="#bab2">2. Cara Menulis CSS</a>
+      <a href="#bab3">3. Warna & Background</a>
+      <a href="#bab4">4. Font & Teks</a>
+      <a href="#bab5">5. Box Model</a>
+      <a href="#bab6">6. Border & Shadow</a>
+      <a href="#bab7">7. Flexbox</a>
+      <a href="#bab8">8. Hover & Animasi</a>
+    </div>
+
+    <div class="materi-section" id="bab1">
+        <h4>Bab 1 — Apa itu CSS?</h4>
+        <p><strong>CSS</strong> adalah singkatan dari <em>Cascading Style Sheets</em>. Kalau HTML adalah kerangka tulang website, maka CSS adalah <strong>baju, warna, dan riasan</strong> yang membuat website terlihat cantik!</p>
+        <p>Tanpa CSS, website hanya teks hitam di latar putih. Dengan CSS, kamu bisa mengubah warna, ukuran huruf, jarak antar elemen, dan masih banyak lagi.</p>
+        <div class="tip-box"><strong>Analogi:</strong> HTML = struktur rumah (dinding, pintu, jendela). CSS = cat rumah, wallpaper, dekorasi.</div>
+    </div>
+
+    <div class="materi-section" id="bab2">
+        <h4>Bab 2 — Cara Menulis CSS</h4>
+        <p>Ada 3 cara menulis CSS:</p>
+        <p><strong>1. Inline CSS</strong> — langsung di dalam tag HTML:</p>
+        <div class="code-box"><span class="sel">&lt;p</span> <span class="prop">style</span>=<span class="val">"color: blue; font-size: 20px;"</span><span class="sel">&gt;</span>Teks biru besar<span class="sel">&lt;/p&gt;</span></div>
+        <p><strong>2. Internal CSS</strong> — di dalam tag <code>&lt;style&gt;</code> di head:</p>
+        <div class="code-box"><span class="sel">&lt;style&gt;</span>
+  <span class="sel">h1</span> {
+    <span class="prop">color</span>: <span class="val">red</span>;
+    <span class="prop">font-size</span>: <span class="val">32px</span>;
+  }
+<span class="sel">&lt;/style&gt;</span></div>
+        <p><strong>3. External CSS</strong> (paling direkomendasikan) — file CSS terpisah:</p>
+        <div class="code-box"><span class="cmt">/* file: style.css */</span>
+<span class="sel">h1</span> {
+  <span class="prop">color</span>: <span class="val">blue</span>;
+}</div>
+        <div class="code-box"><span class="cmt">&lt;!-- di HTML --&gt;</span>
+<span class="sel">&lt;link</span> <span class="prop">rel</span>=<span class="val">"stylesheet"</span> <span class="prop">href</span>=<span class="val">"style.css"</span><span class="sel">&gt;</span></div>
+    </div>
+
+    <div class="materi-section" id="bab3">
+        <h4>Bab 3 — Warna dan Background</h4>
+        <p>CSS bisa mengubah warna teks dan latar belakang:</p>
+        <div class="code-box"><span class="sel">body</span> {
+  <span class="prop">background-color</span>: <span class="val">#f0f0f0</span>;  <span class="cmt">/* abu-abu terang */</span>
+  <span class="prop">color</span>: <span class="val">#333333</span>;           <span class="cmt">/* teks gelap */</span>
+}
+
+<span class="sel">.kotak-biru</span> {
+  <span class="prop">background-color</span>: <span class="val">#3b82f6</span>;
+  <span class="prop">color</span>: <span class="val">white</span>;
+  <span class="prop">padding</span>: <span class="val">20px</span>;
+}</div>
+        <p>Cara menulis warna di CSS:</p>
+        <ul>
+            <li>Nama warna: <code>red</code>, <code>blue</code>, <code>green</code></li>
+            <li>Kode hex: <code>#ff0000</code> (merah), <code>#3b82f6</code> (biru)</li>
+            <li>RGB: <code>rgb(255, 0, 0)</code> (merah)</li>
+        </ul>
+    </div>
+
+    <div class="materi-section" id="bab4">
+        <h4>Bab 4 — Font dan Teks</h4>
+        <div class="code-box"><span class="sel">p</span> {
+  <span class="prop">font-family</span>: <span class="val">"Arial", sans-serif</span>;
+  <span class="prop">font-size</span>: <span class="val">16px</span>;
+  <span class="prop">font-weight</span>: <span class="val">bold</span>;       <span class="cmt">/* tebal */</span>
+  <span class="prop">text-align</span>: <span class="val">center</span>;      <span class="cmt">/* rata tengah */</span>
+  <span class="prop">line-height</span>: <span class="val">1.6</span>;         <span class="cmt">/* jarak antar baris */</span>
+  <span class="prop">text-decoration</span>: <span class="val">underline</span>; <span class="cmt">/* garis bawah */</span>
+}</div>
+        <div class="tip-box"><strong>Tips:</strong> Gunakan <code>font-size</code> minimal 16px agar mudah dibaca. Untuk anak-anak, 18px lebih baik!</div>
+    </div>
+
+    <div class="materi-section" id="bab5">
+        <h4>Bab 5 — Box Model</h4>
+        <p>Setiap elemen HTML adalah sebuah "kotak" yang terdiri dari 4 lapisan:</p>
+        <ul>
+            <li><strong>Content</strong> — isi (teks, gambar)</li>
+            <li><strong>Padding</strong> — jarak antara isi dan border</li>
+            <li><strong>Border</strong> — garis tepi kotak</li>
+            <li><strong>Margin</strong> — jarak antara kotak dengan elemen lain</li>
+        </ul>
+        <div class="code-box"><span class="sel">.kotak</span> {
+  <span class="prop">width</span>: <span class="val">200px</span>;
+  <span class="prop">padding</span>: <span class="val">20px</span>;     <span class="cmt">/* jarak dalam */</span>
+  <span class="prop">border</span>: <span class="val">3px solid black</span>;
+  <span class="prop">margin</span>: <span class="val">10px</span>;      <span class="cmt">/* jarak luar */</span>
+}</div>
+    </div>
+
+    <div class="materi-section" id="bab6">
+        <h4>Bab 6 — Border dan Shadow</h4>
+        <div class="code-box"><span class="sel">.kartu</span> {
+  <span class="prop">border</span>: <span class="val">2px solid #111</span>;
+  <span class="prop">border-radius</span>: <span class="val">12px</span>;          <span class="cmt">/* sudut bulat */</span>
+  <span class="prop">box-shadow</span>: <span class="val">4px 4px 10px rgba(0,0,0,0.2)</span>;
+}
+
+<span class="sel">.lingkaran</span> {
+  <span class="prop">border-radius</span>: <span class="val">50%</span>;           <span class="cmt">/* bikin bulat! */</span>
+}</div>
+    </div>
+
+    <div class="materi-section" id="bab7">
+        <h4>Bab 7 — Flexbox (Tata Letak Fleksibel)</h4>
+        <p>Flexbox membantu mengatur posisi elemen secara horizontal atau vertikal dengan mudah:</p>
+        <div class="code-box"><span class="sel">.container</span> {
+  <span class="prop">display</span>: <span class="val">flex</span>;
+  <span class="prop">justify-content</span>: <span class="val">center</span>;    <span class="cmt">/* rata tengah horizontal */</span>
+  <span class="prop">align-items</span>: <span class="val">center</span>;       <span class="cmt">/* rata tengah vertikal */</span>
+  <span class="prop">gap</span>: <span class="val">16px</span>;                  <span class="cmt">/* jarak antar item */</span>
+}</div>
+        <div class="tip-box"><strong>Tips:</strong> Flexbox sangat berguna untuk membuat navbar, kartu, dan layout modern!</div>
+    </div>
+
+    <div class="materi-section" id="bab8">
+        <h4>Bab 8 — Hover dan Animasi Sederhana</h4>
+        <p>Buat elemen berubah saat mouse diarahkan (hover):</p>
+        <div class="code-box"><span class="sel">.tombol</span> {
+  <span class="prop">background</span>: <span class="val">#3b82f6</span>;
+  <span class="prop">color</span>: <span class="val">white</span>;
+  <span class="prop">padding</span>: <span class="val">12px 24px</span>;
+  <span class="prop">border-radius</span>: <span class="val">8px</span>;
+  <span class="prop">transition</span>: <span class="val">all 0.3s ease</span>;  <span class="cmt">/* animasi halus */</span>
+}
+
+<span class="sel">.tombol:hover</span> {
+  <span class="prop">background</span>: <span class="val">#1d4ed8</span>;
+  <span class="prop">transform</span>: <span class="val">scale(1.05)</span>;     <span class="cmt">/* sedikit membesar */</span>
+}</div>
+        <div class="tip-box"><strong>Selamat!</strong> Kamu sudah belajar dasar-dasar CSS. Sekarang coba praktikkan dengan mempercantik halaman HTML yang sudah kamu buat!</div>
+    </div>
+    
+    <div class="text-center mt-5 mb-5" style="background:#fff; border: 3px solid #111; border-radius: 12px; padding: 30px; box-shadow: 6px 6px 0 #111;">
+        <h4 style="font-weight: 800; margin-bottom: 15px;">Sudah paham dengan CSS?</h4>
+        <p style="margin-bottom: 20px;">Klik tombol di bawah ini untuk menandai kelas selesai dan membuka materi JavaScript.</p>
+        <button class="btn btn-primary btn-lg" onclick="completeCourse('css', 'js')" style="box-shadow: 4px 4px 0 #111; border:3px solid #111; font-weight:800; font-family:'Space Grotesk', sans-serif;">✅ Tandai Selesai & Buka Kelas JS</button>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/auth.js"></script>
+<script>
+function completeCourse(current, next) {
+    const user = JSON.parse(localStorage.getItem('auth_user') || '{}');
+    const email = user.email || 'guest';
+    const progKey = 'course_progress_' + email;
+    let prog = JSON.parse(localStorage.getItem(progKey) || '["html"]');
+    if (!prog.includes(next)) prog.push(next);
+    localStorage.setItem(progKey, JSON.stringify(prog));
+    alert('Selamat! Kelas ' + next.toUpperCase() + ' berhasil dibuka.');
+    window.location.href = '/murid/kelas.html';
+}
+</script>
+</body>
+</html>

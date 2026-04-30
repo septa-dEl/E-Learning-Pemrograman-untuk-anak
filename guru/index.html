@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+  <style>
+    :root {
+      --brut-yellow: #ffea00;
+      --brut-blue: #3d5afe;
+      --brut-pink: #ff4081;
+      --brut-green: #00e676;
+      --brut-black: #111111;
+    }
+
+    .intro-section {
+      padding: 80px 0;
+      background: radial-gradient(circle at 10% 20%, rgba(238, 243, 255, 0.5) 0%, rgba(248, 251, 255, 0) 90%);
+    }
+
+    .section-title-container {
+      margin-bottom: 50px;
+    }
+
+    .pilihan-kelas.modern-title {
+      background: var(--brut-black);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 4px;
+      transform: rotate(-1deg);
+      display: inline-block;
+      box-shadow: 6px 6px 0 var(--brut-blue);
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      width: auto;
+      margin: 0 auto;
+    }
+
+    .intro-card {
+      position: relative;
+      background: #fff;
+      border: 3px solid var(--brut-black);
+      padding: 32px;
+      border-radius: 0px; 
+      box-shadow: 8px 8px 0 var(--brut-black);
+      height: 100%;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .intro-card:hover {
+      transform: translate(-4px, -4px);
+      box-shadow: 12px 12px 0 var(--brut-black);
+    }
+
+    .intro-card::after {
+      content: '';
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      width: 60px;
+      height: 60px;
+      background: var(--card-accent, var(--brut-yellow));
+      border: 3px solid var(--brut-black);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-icon.number-icon {
+      width: 60px;
+      height: 60px;
+      border: 3px solid var(--brut-black);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 900;
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--icon-bg, #fff);
+      color: var(--brut-black);
+    }
+
+    .intro-card h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800;
+      color: var(--brut-black);
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .intro-card p {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #333;
+      line-height: 1.7;
+      font-weight: 600;
+      margin-bottom: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-yellow { --card-accent: var(--brut-yellow); }
+    .card-blue { --card-accent: var(--brut-blue); }
+    .card-pink { --card-accent: var(--brut-pink); }
+    .card-green { --card-accent: var(--brut-green); }
+
+    .btn-brutal {
+      background: var(--brut-yellow);
+      color: var(--brut-black) !important;
+      border: 3px solid var(--brut-black);
+      padding: 16px 48px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border-radius: 0;
+      box-shadow: 6px 6px 0 var(--brut-black);
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-brutal:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 8px 8px 0 var(--brut-black);
+      background: #ffee33;
+    }
+
+    .btn-brutal:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 var(--brut-black);
+    }
+  </style>
+  <title>El-pro - Guru</title>
+</head>
+<body>
+
+  <div class="sidebar">
+    <div class="sidebar-icons">
+      <ul>
+        <li>
+          <a href="/guru/index.html" class="active">
+            <img src="/assets/image/web icons/home2.svg" class="home-icon">
+          </a>
+        </li>
+        <li>
+          <a href="/guru/kelas.html">
+            <img src="/assets/image/web icons/homeProfile.svg" class="homeProfile-icon">
+          </a>
+        </li>
+        <li>
+          <a href="/guru/manajemen-tantangan.html">
+            <img src="/assets/image/web icons/bookmark.svg" class="bookmark-icon">
+          </a>
+        </li>
+        <li>
+          <a href="/guru/absensi.html">
+            <img src="/assets/image/web icons/book.svg" class="absen-icon">
+          </a>
+        </li>
+        <li>
+          <a href="/guru/profile.html">
+            <img src="/assets/image/web icons/profile.svg" class="user-profile">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+n<div class="header">
+  <div class="header-text">
+    <span class="section-label">Selamat datang, Guru</span>
+    <h1>Panel Guru - Manajemen Kelas dan Tantangan</h1>
+    <p>Kelola materi, tantangan, dan absensi siswa dengan mudah melalui panel ini.</p>
+    <div class="header-actions">
+      <a href="/guru/manajemen-tantangan.html" class="btn btn-primary">Manajemen Tantangan</a>
+      <a href="/guru/absensi.html" class="btn btn-outline-primary">Manajemen Absensi</a>
+    </div>
+  </div>
+  <div class="image-header">
+    <img src="/assets/logo.png" class="home-header" alt="El-pro">
+  </div>
+</div>
+
+<div class="intro-section">
+  <div class="container">
+    <div class="section-title-container text-center">
+      <h2 class="pilihan-kelas modern-title">Pengenalan Panel Guru</h2>
+    </div>
+    
+    <div class="row g-5">
+      <!-- Card 1 -->
+      <div class="col-md-6">
+        <div class="intro-card card-yellow">
+          <div class="card-icon number-icon" style="--icon-bg: #ffea00;">1</div>
+          <h4>Visi & Misi El-Pro</h4>
+          <p>Platform El-Pro (E-Learning Programming) dibangun untuk mendemokratisasi akses pendidikan pemrograman bagi pemula. Kami menyediakan alat manajemen untuk guru agar proses pengajaran lebih mudah.</p>
+        </div>
+      </div>
+      
+      <!-- Card 2 -->
+      <div class="col-md-6">
+        <div class="intro-card card-blue">
+          <div class="card-icon number-icon" style="--icon-bg: #3d5afe; color: white;">2</div>
+          <h4>Pembelajaran Bertahap</h4>
+          <p>Untuk menjaga fokus, sistem kami dilengkapi mekanisme <strong>Progressive Unlocking</strong> yang unik per profil pengguna dan dikontrol oleh guru melalui panel manajemen.</p>
+        </div>
+      </div>
+      
+      <!-- Card 3 -->
+      <div class="col-md-6">
+        <div class="intro-card card-green">
+          <div class="card-icon number-icon" style="--icon-bg: #00e676;">3</div>
+          <h4>Alat Bantu Guru</h4>
+          <p>Panel guru menyediakan akses untuk membuat, mengedit, dan menghapus tantangan serta memantau progres siswa secara real-time.</p>
+        </div>
+      </div>
+      
+      <!-- Card 4 -->
+      <div class="col-md-6">
+        <div class="intro-card card-pink">
+          <div class="card-icon number-icon" style="--icon-bg: #ff4081; color: white;">4</div>
+          <h4>Multi-Role Security</h4>
+          <p>Website memisahkan privilese Siswa, Guru, dan Administrator. Guru memiliki akses manajemen yang terbatas sesuai tugas pengajaran.</p>
+        </div>
+      </div>
+    
+    </div>
+
+    <div class="text-center" style="margin-top: 70px;">
+      <a href="/guru/manajemen-tantangan.html" class="btn-brutal">Buka Manajemen Tantangan 🚀</a>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="/js/auth.js"></script>
+</body>
+</html>
